@@ -14,3 +14,22 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+
+Route::group(['middleware'=>'agency'],function (){
+
+    Route::resource('/agency','AgencyController',['as'=>'agency']);
+
+
+});
+
+Route::group(['middleware'=>'owner'],function (){
+
+    Route::resource('/owner','OwnerController',['as'=>'owner']);
+
+
+});

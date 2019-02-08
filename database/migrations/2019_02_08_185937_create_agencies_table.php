@@ -21,7 +21,7 @@ class CreateAgenciesTable extends Migration
             $table->string('address');
             $table->string('location');
             $table->string('phone');
-            $table->string('email');
+            $table->string('email')->unique();
             $table->timestamps();
         });
     }

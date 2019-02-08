@@ -27,4 +27,27 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    public function role_user(){
+        return $this->hasOne('App\RoleUser');
+    }
+
+    public function agency_user(){
+        return $this->hasOne('App\AgencyUser');
+    }
+
+    public  function isAgency(){
+        if($this->role_user->role->name == "Agency"){
+            return view('agency.index');
+        }
+        return false;
+    }
+
+    public  function isOwner(){
+        if($this->role_user->role->name== "Owner"){
+            return view('owner.index');
+        }
+        return false;
+    }
+
 }
