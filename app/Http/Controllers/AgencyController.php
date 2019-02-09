@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\User;
 
 class AgencyController extends Controller
 {
@@ -56,7 +57,8 @@ class AgencyController extends Controller
      */
     public function edit($id)
     {
-        //
+        $users=User::findOrFail($id);
+        return view('agency.edit' ,compact('users'));
     }
 
     /**

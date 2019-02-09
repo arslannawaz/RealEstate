@@ -1,34 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-
-    <title>Admin</title>
-
-    <!-- Bootstrap Core CSS -->
-
-    {{--
-        <link href="{{asset('css/app.css')}}" rel="stylesheet">
-    --}}
-
+    <title>Agency</title>
     <link href="{{asset('css/all.css')}}" rel="stylesheet">
-
-    @yield('styles');
-
-    {{--<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
---}}
-
 </head>
 
 <body id="admin-page" style="padding-top: 0px">
-
 <div id="wrapper">
 
     <!-- Navigation -->
@@ -56,9 +38,9 @@
                     {{ Auth::user()->email }}
                 </a>
                 <ul class="dropdown-menu dropdown-user">
-                    <li><a href="#"><i class="fa fa-user fa-fw"></i> User Profile</a>
+                    <li><a href="{{route('agency.agency.index')}}"><i class="fa fa-user fa-fw"></i> User Profile</a>
                     </li>
-                    <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
+                    <li><a href="{{route('agency.edit.edit',Auth::user()->id)}}"><i class="fa fa-gear fa-fw"></i> Settings</a>
                     </li>
                     <li class="divider"></li>
                     <li>
@@ -348,8 +330,8 @@
         <div class="row">
             <div class="col-lg-12">
                 <h1 class="page-header"></h1>
-
                 @yield('content')
+
             </div>
             <!-- /.col-lg-12 -->
         </div>

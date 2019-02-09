@@ -24,6 +24,9 @@ Route::group(['middleware'=>'agency'],function (){
 
     Route::resource('/agency','AgencyController',['as'=>'agency']);
 
+    Route::resource('/agency/edit','AgencyController',['as'=>'agency']);
+
+
 
 });
 
