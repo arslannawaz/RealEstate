@@ -38,9 +38,9 @@
                     {{ Auth::user()->email }}
                 </a>
                 <ul class="dropdown-menu dropdown-user">
-                    <li><a href="{{route('agency.agency.index')}}"><i class="fa fa-user fa-fw"></i> User Profile</a>
+                    <li><a href="{{route('agency.agency.create')}}"><i class="fa fa-user fa-fw"></i> User Profile</a>
                     </li>
-                    <li><a href="{{route('agency.edit.edit',Auth::user()->id)}}"><i class="fa fa-gear fa-fw"></i> Settings</a>
+                    <li><a href="{{route('agency.agency.edit',Auth::user()->id)}}"><i class="fa fa-gear fa-fw"></i> Settings</a>
                     </li>
                     <li class="divider"></li>
                     <li>
@@ -110,18 +110,16 @@
                         <!-- /input-group -->
                     </li>
                     <li>
-                        <a href="/admin"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
+                        <a href="{{route('agency.agency.index')}}"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
                     </li>
 
                     <li>
-                        <a href="#"><i class="fa fa-wrench fa-fw"></i>Users<span class="fa arrow"></span></a>
+                        <a href="#"><i class="fa fa-wrench fa-fw"></i>Owners<span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
-                            <li>
-                                <a href="#">All Users</a>
-                            </li>
+
 
                             <li>
-                                <a href="{{--{{route('admin.users.create')}}--}}">Create User</a>
+                                <a href="{{route('agency.owners.create')}}">Create Owner</a>
                             </li>
 
                         </ul>

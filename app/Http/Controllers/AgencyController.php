@@ -2,8 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Agencies;
+use App\AgencyUser;
+use App\Http\Middleware\Agency;
 use Illuminate\Http\Request;
 use App\User;
+use Illuminate\Support\Facades\Auth;
+
 
 class AgencyController extends Controller
 {
@@ -24,7 +29,8 @@ class AgencyController extends Controller
      */
     public function create()
     {
-        //
+        $user=Auth::user();
+        return view('agency.create',compact('user'));
     }
 
     /**
@@ -35,7 +41,22 @@ class AgencyController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            'name' => 'required',
+            'slug' => 'required',
+            'description' => 'required',
+            'address' => 'required',
+            'location' => 'required',
+            'phone' => 'required',
+            'email' => 'required',
+        ]);
+
+        $input=$request->all();
+        $agency=Agencies::create($input);
+        $user_id=Auth::user();
+        AgencyUser::create(['user_id'=>$user_id->id,'agencies_id'=>$agency->id]);
+        return redirect('/agency');
+
     }
 
     /**
@@ -57,8 +78,8 @@ class AgencyController extends Controller
      */
     public function edit($id)
     {
-        $users=User::findOrFail($id);
-        return view('agency.edit' ,compact('users'));
+        $agency=Auth::user()->agency_user->agencies;
+        return view('agency.edit' ,compact('agency'));
     }
 
     /**
@@ -70,7 +91,9 @@ class AgencyController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $agency=Agencies::findOrFail($id);
+        $agency->update($request->all());
+        return redirect('/agency');
     }
 
     /**
