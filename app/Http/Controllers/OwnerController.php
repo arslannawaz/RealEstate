@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+
 
 class OwnerController extends Controller
 {
@@ -13,7 +15,8 @@ class OwnerController extends Controller
      */
     public function index()
     {
-        return view('owner.index');
+        $user=Auth::user();
+        return view('owner.index',compact('user'));
     }
 
     /**
@@ -45,7 +48,7 @@ class OwnerController extends Controller
      */
     public function show($id)
     {
-        //
+
     }
 
     /**

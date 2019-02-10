@@ -26,11 +26,16 @@ Route::group(['middleware'=>'agency'],function (){
 
     Route::resource('/agency/owners','AgencyOwnerController',['as'=>'agency']);
 
+    Route::resource('/agency/property','AgencyPropertyController',['as'=>'agency']);
+
 });
 
 Route::group(['middleware'=>'owner'],function (){
 
     Route::resource('/owner','OwnerController',['as'=>'owner']);
+
+    Route::resource('/owner/property','PropertyOwnerController',['as'=>'owner']);
+
 
 
 });

@@ -29,7 +29,7 @@ class HomeController extends Controller
             return view('agency.index');
         }
         else if(Auth::user()->role_user->role->name== "Owner"){
-            return view('owner.index');
+            return redirect('owner');
         }
 
     }
