@@ -11,9 +11,9 @@ class Profile extends Model
         'first_name', 'last_name', 'gender','profession','email','phone','status','address','avatar'
     ];
 
-    public function profile_property(){
+    /*public function profile_property(){
         return $this->hasOne('App\ProfileProperty');
-    }
+    }*/
 
     public function profile_properties(){
         return $this->hasMany('App\ProfileProperty');

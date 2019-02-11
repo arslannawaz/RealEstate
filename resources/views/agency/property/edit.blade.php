@@ -62,16 +62,20 @@
 
     {!! Form::close() !!}
 
-    {!! Form::open(['action' => ['AgencyPropertyController@destroy',$property->id],'method'=>'DELETE']) !!}
+    {{--{!! Form::open(['action' => ['AgencyPropertyController@destroy',$property->id],'method'=>'DELETE']) !!}
     @csrf
 
     <div class="form-group">
         {!! Form::submit('Delete Property',['class'=>'btn btn-danger col-md-6']) !!}
     </div>
 
-    {!! Form::close() !!}
+    {!! Form::close() !!}--}}
 
-
+    <form action="{{ url('agency/property', $property->id) }}" method="post" class="delete" onsubmit="return confirm('Do you really want to delete?')">
+        @csrf
+        <input type="hidden" name="_method" value="DELETE">
+        <input class="btn btn-danger col-md-6" type="submit" name="submit" value="Delete Property">
+    </form>
 
     @include('layouts.error')
 

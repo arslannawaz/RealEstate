@@ -96,6 +96,8 @@ class PropertyOwnerController extends Controller
             'profile_id'=>$profile_id
             ]);
 
+        return redirect()->back();
+
     }
 
     /**
@@ -110,8 +112,8 @@ class PropertyOwnerController extends Controller
         return view('owner.property.index',compact('profiles'));*/
 
         $profiles = Profile::findOrFail($id);
-        $profile_properties=$profiles->profile_properties;
-        return view('owner.property.index',compact('profile_properties'));
+        $profile_propertyy=$profiles->profile_properties;
+        return view('owner.property.index',compact('profile_propertyy'));
     }
 
     /**

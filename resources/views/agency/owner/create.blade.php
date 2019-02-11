@@ -2,12 +2,10 @@
 
 @section('content')
 
-    <div class="col-md-4">
-
     <h1>Create Owner</h1>
 
 
-    {!! Form::open(['action' => 'AgencyOwnerController@store','method'=>'POST']) !!}
+    {!! Form::open(['action' => 'AgencyOwnerController@store','method'=>'POST','files'=>true]) !!}
     @csrf
 
         <div class="form-group">
@@ -51,11 +49,6 @@
         </div>
 
         <div class="form-group">
-            {!! Form::label('avatar','avatar') !!}
-            {!! Form::text('avatar',null,['class'=>'form-control']) !!}
-        </div>
-
-        <div class="form-group">
             {!! Form::label('status','Status') !!}
             {!! Form::text('status',null,['class'=>'form-control']) !!}
         </div>
@@ -66,49 +59,16 @@
     </div>
 
     <div class="form-group">
+        {!! Form::label('avatar','Avatar') !!}
+        {!! Form::file('avatar',null,['class'=>'form-control']) !!}
+    </div>
+
+    <div class="form-group">
         {!! Form::submit('Create Owner',['class'=>'btn btn-primary']) !!}
     </div>
 
     {!! Form::close() !!}
 
-
     @include('layouts.error')
-
-    </div>
-
-    <div class="col-md-8">
-        <h1>All Owner</h1>
-
-        <table class="table table-hover">
-            <thead>
-            <tr>
-                <th>ID</th>
-                <th>First Name</th>
-                <th>Last Name</th>
-                <th>Email</th>
-                <th>Action</th>
-            </tr>
-            </thead>
-            <tbody>
-
-            @foreach($users as $user)
-                @if($user->role_user->role->name=='Owner')
-                <tr>
-                    <td>{{$user->id}}</td>
-                    <td>{{$user->profile_user->profile->first_name}}</td>
-                    <td>{{$user->profile_user->profile->last_name}}</td>
-                    <td><a href="{{route('agency.owners.edit',$user->id)}}">{{$user->email}}</a></td>
-                    <td><a href="{{route('agency.owners.edit',$user->id)}}"><button class="btn btn-success">Update/Delete</button></a></td>
-
-                </tr>
-                @endif
-
-            @endforeach
-
-            </tbody>
-        </table>
-
-
-    </div>
 
     @stop

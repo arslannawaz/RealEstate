@@ -147,6 +147,8 @@ class AgencyPropertyController extends Controller
 
         PropertyTypes::findOrFail($p_type)->delete();
 
+        ProfileProperty::where('properties_id',$id)->delete();
+
         return redirect('agency/property/create');
 
 

@@ -3,7 +3,13 @@
 @section('content')
     <h1>Edit Owner</h1>
 
-    {!! Form::open(['action' => ['AgencyOwnerController@update',$user->profile_user->profile->id],'method'=>'PATCH']) !!}
+    <div class="col-md-4">
+        <img width="250" src="{{URL::to('/images/',$user->profile_user->profile->avatar)}}">
+    </div>
+
+    <div class="col-md-8">
+
+    {!! Form::open(['action' => ['AgencyOwnerController@update',$user->profile_user->profile->id],'method'=>'PATCH','files'=>true]) !!}
     @csrf
 
     <div class="form-group">
@@ -37,13 +43,13 @@
     </div>
 
     <div class="form-group">
-        {!! Form::label('avatar','avatar') !!}
-        {!! Form::text('avatar',$user->profile_user->profile->avatar,['class'=>'form-control']) !!}
+        {!! Form::label('status','Status') !!}
+        {!! Form::text('status',$user->profile_user->profile->status,['class'=>'form-control']) !!}
     </div>
 
     <div class="form-group">
-        {!! Form::label('status','Status') !!}
-        {!! Form::text('status',$user->profile_user->profile->status,['class'=>'form-control']) !!}
+        {!! Form::label('avatar','avatar') !!}
+        {!! Form::file('avatar',null,['class'=>'form-control']) !!}
     </div>
 
     <div class="form-group">
@@ -52,18 +58,23 @@
 
     {!! Form::close() !!}
 
-    {!! Form::open(['action' => ['AgencyOwnerController@destroy',$user->id],'method'=>'DELETE']) !!}
+    {{--{!! Form::open(['action' => ['AgencyOwnerController@destroy',$user->id],'method'=>'DELETE']) !!}
     @csrf
     <div class="form-group">
 
-        {!! Form::submit('Delete Post',['class'=>'btn btn-danger col-sm-6']) !!}
+        {!! Form::submit('Delete Owner',['class'=>'btn btn-danger col-sm-6']) !!}
 
     </div>
 
-    {!! Form::close() !!}
+    {!! Form::close() !!}--}}
 
+        <form action="{{ url('agency/owners', $user->id) }}" method="post" class="delete" onsubmit="return confirm('Do you really want to delete?')">
+            @csrf
+            <input type="hidden" name="_method" value="DELETE">
+            <input class="btn btn-danger col-md-6" type="submit" name="submit" value="Delete Owner">
+        </form>
 
     @include('layouts.error')
-
+    </div>
 
 @stop

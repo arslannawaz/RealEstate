@@ -28,7 +28,7 @@
                 </tr>
         @endforeach--}}
 
-        @foreach($profile_properties as $profile_property)
+        @foreach($profile_propertyy as $profile_property)
             <tr>
                 {{--<td>{{$profile->profile_property->properties->property_types}}</td>
                 <td>{{$profile->profile_property->properties->property_pictures}}</td>--}}
@@ -40,9 +40,11 @@
                 <td>{{$profile_property->properties->latitude}}</td>
                 <td>{{$profile_property->properties->status}}</td>
                 <td>{{$profile_property->properties->property_types->name}}</td>
+
 {{--
                 <td>{{$profile_property->properties->property_pictures->src}}</td>
 --}}
+
                 <td><img width="75" src="{{URL::to('/images/',$profile_property->properties->property_pictures->src)}}"></td>
 
 

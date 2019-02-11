@@ -3,16 +3,18 @@
   <component name="ChangeListManager">
     <list default="true" id="b8fec5bd-04c3-4af4-8c1d-1f967f6ee3da" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/OwnerController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/OwnerController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AgencyOwnerController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/AgencyOwnerController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AgencyPropertyController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/AgencyPropertyController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/PropertyOwnerController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/PropertyOwnerController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Profile.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Profile.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/ProfileProperty.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/ProfileProperty.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Properties.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Properties.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/PropertyPictures.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/PropertyPictures.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/PropertyTypes.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/PropertyTypes.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/agency/only-agency.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/agency/only-agency.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/owner/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/owner/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/agency/owner/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/agency/owner/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/agency/owner/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/agency/owner/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/agency/owner/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/agency/owner/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/agency/property/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/agency/property/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/agency/property/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/agency/property/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/agency/property/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/agency/property/show.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/owner/property/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/owner/property/index.blade.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -27,11 +29,13 @@
     <session id="-1614203944">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="3" />
+          <entry key="project.closed" value="4" />
+          <entry key="project.open.time.1" value="1" />
           <entry key="project.open.time.2" value="2" />
           <entry key="project.open.time.6" value="1" />
+          <entry key="project.open.time.71" value="1" />
           <entry key="project.open.time.9" value="1" />
-          <entry key="project.opened" value="4" />
+          <entry key="project.opened" value="6" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -40,16 +44,16 @@
           <entry key="env" value="1" />
           <entry key="js" value="3" />
           <entry key="json" value="4" />
-          <entry key="php" value="274" />
+          <entry key="php" value="310" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="Blade" value="100" />
+          <entry key="Blade" value="122" />
           <entry key="CSS" value="1" />
           <entry key="JSON" value="4" />
           <entry key="JavaScript" value="3" />
-          <entry key="PHP" value="174" />
+          <entry key="PHP" value="188" />
           <entry key="PLAIN_TEXT" value="1" />
         </counts>
       </usages-collector>
@@ -58,15 +62,15 @@
           <entry key="env" value="24" />
           <entry key="js" value="2" />
           <entry key="json" value="2" />
-          <entry key="php" value="12534" />
+          <entry key="php" value="13732" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Blade" value="4668" />
+          <entry key="Blade" value="5420" />
           <entry key="JSON" value="2" />
           <entry key="JavaScript" value="2" />
-          <entry key="PHP" value="7866" />
+          <entry key="PHP" value="8312" />
           <entry key="PLAIN_TEXT" value="24" />
         </counts>
       </usages-collector>
@@ -74,59 +78,14 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/AgencyPropertyController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="184">
-              <caret line="127" column="50" selection-start-line="127" selection-start-column="50" selection-end-line="127" selection-end-column="50" />
-              <folding>
-                <element signature="e#40#64#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/AgencyController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="143">
-              <caret line="92" column="5" selection-start-line="92" selection-start-column="5" selection-end-line="92" selection-end-column="5" />
-              <folding>
-                <element signature="e#40#57#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/PropertyOwnerController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="43" column="8" selection-start-line="43" selection-start-column="8" selection-end-line="55" selection-end-column="11" />
-              <folding>
-                <element signature="e#40#56#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/views/agency/property/show.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="6" column="114" selection-start-line="6" selection-start-column="114" selection-end-line="6" selection-end-column="142" />
+            <state relative-caret-position="311">
+              <caret line="26" column="10" selection-start-line="26" selection-start-column="10" selection-end-line="26" selection-end-column="10" />
               <folding>
-                <element signature="e#250#299#0#HTML" expanded="true" />
+                <element signature="e#502#630#0#HTML" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/resources/views/agency/property/edit.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="68" column="68" selection-start-line="68" selection-start-column="68" selection-end-line="68" selection-end-column="68" />
             </state>
           </provider>
         </entry>
@@ -169,11 +128,8 @@
         <option value="$PROJECT_DIR$/resources/views/agency/create.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/agency/edit.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/agency/index.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/agency/owner/index.blade.php" />
         <option value="$PROJECT_DIR$/app/RoleUser.php" />
-        <option value="$PROJECT_DIR$/resources/views/agency/owner/edit.blade.php" />
         <option value="$PROJECT_DIR$/app/User.php" />
-        <option value="$PROJECT_DIR$/resources/views/agency/owner/create.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/AgencyController.php" />
         <option value="$PROJECT_DIR$/app/PropertyTypes.php" />
         <option value="$PROJECT_DIR$/app/PropertyPictures.php" />
@@ -181,22 +137,25 @@
         <option value="$PROJECT_DIR$/app/Http/Controllers/OwnerController.php" />
         <option value="$PROJECT_DIR$/resources/views/owner/show.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/owner/index.blade.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/AgencyOwnerController.php" />
         <option value="$PROJECT_DIR$/resources/views/owner/only-owner.blade.php" />
         <option value="$PROJECT_DIR$/app/ProfileUser.php" />
-        <option value="$PROJECT_DIR$/app/Properties.php" />
-        <option value="$PROJECT_DIR$/app/ProfileProperty.php" />
-        <option value="$PROJECT_DIR$/app/Profile.php" />
         <option value="$PROJECT_DIR$/resources/views/owner/property/edit.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/owner/property/index.blade.php" />
         <option value="$PROJECT_DIR$/routes/web.php" />
-        <option value="$PROJECT_DIR$/resources/views/agency/only-agency.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/agency/property/index.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/agency/property/show.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/owner/property/create.blade.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/PropertyOwnerController.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/AgencyPropertyController.php" />
+        <option value="$PROJECT_DIR$/resources/views/agency/only-agency.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/agency/owner/create.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/agency/owner/index.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/agency/property/index.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/agency/owner/edit.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/agency/property/edit.blade.php" />
+        <option value="$PROJECT_DIR$/app/Properties.php" />
+        <option value="$PROJECT_DIR$/app/Profile.php" />
+        <option value="$PROJECT_DIR$/app/ProfileProperty.php" />
+        <option value="$PROJECT_DIR$/resources/views/owner/property/index.blade.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/AgencyPropertyController.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/AgencyOwnerController.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/PropertyOwnerController.php" />
+        <option value="$PROJECT_DIR$/resources/views/agency/property/show.blade.php" />
       </list>
     </option>
   </component>
@@ -308,7 +267,7 @@
       <path value="$PROJECT_DIR$/vendor/laravelcollective/html" />
     </include_path>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="-360" />
     <option name="y" value="126" />
     <option name="width" value="1346" />
@@ -373,26 +332,6 @@
               <item name="agency" type="462c0819:PsiDirectoryNode" />
               <item name="property" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="RealEstate" type="b2602c69:ProjectViewProjectNode" />
-              <item name="RealEstate" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="owner" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="RealEstate" type="b2602c69:ProjectViewProjectNode" />
-              <item name="RealEstate" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="owner" type="462c0819:PsiDirectoryNode" />
-              <item name="property" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="RealEstate" type="b2602c69:ProjectViewProjectNode" />
-              <item name="RealEstate" type="462c0819:PsiDirectoryNode" />
-              <item name="routes" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -403,7 +342,7 @@
   <component name="PropertiesComponent">
     <property name="SearchEverywhereHistoryKey" value="App&#9;null&#9;null" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../formlaravel" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
@@ -433,18 +372,20 @@
       <workItem from="1549650436351" duration="853000" />
       <workItem from="1549651345186" duration="16665000" />
       <workItem from="1549697104506" duration="47406000" />
-      <workItem from="1549786440904" duration="23309000" />
+      <workItem from="1549786440904" duration="26365000" />
+      <workItem from="1549894091960" duration="2688000" />
+      <workItem from="1549898851083" duration="11346000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="88233000" />
+    <option name="totallyTimeSpent" value="105323000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2193646" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22541603" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -459,7 +400,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" weight="0.09836066" />
-      <window_info anchor="bottom" id="Terminal" order="11" visible="true" weight="0.09836066" />
+      <window_info anchor="bottom" id="Terminal" order="11" weight="0.47540984" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -559,20 +500,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/agency/index.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="5" selection-start-line="4" selection-start-column="5" selection-end-line="4" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/agency/create.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="35" selection-start-line="35" selection-end-line="35" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/PropertyTypes.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
@@ -605,13 +532,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
           <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/owner/only-owner.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="273">
-          <caret line="137" column="138" selection-start-line="137" selection-start-column="138" selection-end-line="137" selection-end-column="138" />
         </state>
       </provider>
     </entry>
@@ -664,62 +584,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Properties.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" selection-start-line="19" selection-end-line="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/agency/owner/create.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="379">
-          <caret line="104" lean-forward="true" selection-start-line="104" selection-end-line="104" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Profile.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/AgencyOwnerController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="205">
-          <caret line="136" column="32" lean-forward="true" selection-start-line="136" selection-start-column="32" selection-end-line="136" selection-end-column="32" />
-          <folding>
-            <element signature="e#40#56#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/agency/owner/index.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="9" lean-forward="true" selection-start-line="5" selection-start-column="9" selection-end-line="5" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/agency/owner/edit.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="242">
-          <caret line="54" column="4" selection-start-line="54" selection-start-column="4" selection-end-line="62" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/routes/web.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="234">
           <caret line="29" selection-start-line="29" selection-end-line="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/agency/edit.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-166">
-          <caret line="10" column="9" lean-forward="true" selection-start-line="10" selection-start-column="9" selection-end-line="10" selection-end-column="9" />
         </state>
       </provider>
     </entry>
@@ -730,91 +598,155 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="579">
           <caret line="52" column="5" selection-start-line="52" selection-start-column="5" selection-end-line="52" selection-end-column="5" />
-          <folding>
-            <element signature="e#23#63#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/ProfileProperty.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/agency/only-agency.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" selection-start-line="10" selection-end-line="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/owner/property/index.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="30" selection-start-line="10" selection-start-column="30" selection-end-line="10" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/agency/property/index.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="21" lean-forward="true" selection-start-line="8" selection-start-column="21" selection-end-line="8" selection-end-column="68" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/owner/property/create.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/agency/property/show.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="114" selection-start-line="6" selection-start-column="114" selection-end-line="6" selection-end-column="142" />
-          <folding>
-            <element signature="e#250#299#0#HTML" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/AgencyController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="143">
+        <state relative-caret-position="171">
           <caret line="92" column="5" selection-start-line="92" selection-start-column="5" selection-end-line="92" selection-end-column="5" />
-          <folding>
-            <element signature="e#40#57#0#PHP" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/PropertyOwnerController.php">
+    <entry file="file://$PROJECT_DIR$/resources/views/owner/property/create.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="43" column="8" selection-start-line="43" selection-start-column="8" selection-end-line="55" selection-end-column="11" />
+        <state relative-caret-position="-382">
+          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/agency/owner/create.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="145">
+          <caret line="50" column="32" lean-forward="true" selection-start-line="50" selection-start-column="32" selection-end-line="50" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/agency/index.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="5" selection-start-line="4" selection-start-column="5" selection-end-line="4" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/agency/create.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="35" selection-start-line="35" selection-end-line="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/agency/edit.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="10" column="9" lean-forward="true" selection-start-line="10" selection-start-column="9" selection-end-line="10" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/agency/owner/index.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="13" lean-forward="true" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/agency/property/index.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="20" lean-forward="true" selection-start-line="9" selection-start-column="20" selection-end-line="9" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/agency/only-agency.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="247">
+          <caret line="123" lean-forward="true" selection-start-line="123" selection-end-line="123" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/agency/property/edit.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="414">
+          <caret line="78" column="4" selection-start-line="78" selection-start-column="4" selection-end-line="78" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/agency/owner/edit.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="460">
+          <caret line="80" selection-start-line="80" selection-end-line="80" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/owner/only-owner.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="296">
+          <caret line="139" lean-forward="true" selection-start-line="139" selection-end-line="139" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Profile.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/ProfileProperty.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="5" lean-forward="true" selection-start-line="15" selection-start-column="5" selection-end-line="15" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Properties.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="18" column="5" lean-forward="true" selection-start-line="18" selection-start-column="5" selection-end-line="18" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/owner/property/index.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="416">
+          <caret line="44" column="65" selection-start-line="43" selection-end-line="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/AgencyOwnerController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1363">
+          <caret line="149" column="50" selection-start-line="149" selection-start-column="50" selection-end-line="149" selection-end-column="50" />
           <folding>
             <element signature="e#40#56#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/PropertyOwnerController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="275">
+          <caret line="98" column="34" selection-start-line="98" selection-start-column="34" selection-end-line="98" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/AgencyPropertyController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="127" column="50" selection-start-line="127" selection-start-column="50" selection-end-line="127" selection-end-column="50" />
+        <state relative-caret-position="2057">
+          <caret line="148" lean-forward="true" selection-start-line="148" selection-end-line="148" />
           <folding>
             <element signature="e#40#64#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/agency/property/edit.blade.php">
+    <entry file="file://$PROJECT_DIR$/resources/views/agency/property/show.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="68" column="68" selection-start-line="68" selection-start-column="68" selection-end-line="68" selection-end-column="68" />
+        <state relative-caret-position="311">
+          <caret line="26" column="10" selection-start-line="26" selection-start-column="10" selection-end-line="26" selection-end-column="10" />
+          <folding>
+            <element signature="e#502#630#0#HTML" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

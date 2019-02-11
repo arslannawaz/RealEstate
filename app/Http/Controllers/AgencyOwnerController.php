@@ -19,7 +19,6 @@ class AgencyOwnerController extends Controller
      */
     public function index()
     {
-        return "Vorks";
     }
 
     /**
@@ -55,28 +54,34 @@ class AgencyOwnerController extends Controller
             'status' => 'required',
         ]);
 
-        $input = $request->all();
-        $input['password'] = bcrypt($request->password);
-        $user = User::create($input);
-        RoleUser::create(['user_id' => $user->id, 'role_id' => '2']);
+        if($file=$request->file('avatar')){
+            $name=time().$file->getClientOriginalName();
+            $file->move('images',$name);
+
+            $input = $request->all();
+            $input['password'] = bcrypt($request->password);
+            $user = User::create($input);
+            RoleUser::create(['user_id' => $user->id, 'role_id' => '2']);
 
 
-        $profile = new Profile();
-        $profile->first_name = $input['firstname'];
-        $profile->last_name = $input['lastname'];
-        $profile->gender = $input['gender'];
-        $profile->profession = $input['profession'];
-        $profile->address = $input['address'];
-        $profile->phone = $input['phone'];
-        $profile->avatar = $input['avatar'];
-        $profile->status = $input['status'];
-        $profile->email = $input['email'];
+            $profile = new Profile();
+            $profile->first_name = $input['firstname'];
+            $profile->last_name = $input['lastname'];
+            $profile->gender = $input['gender'];
+            $profile->profession = $input['profession'];
+            $profile->address = $input['address'];
+            $profile->phone = $input['phone'];
+            $profile->avatar = $name;
+            $profile->status = $input['status'];
+            $profile->email = $input['email'];
 
-        $profile->save();
+            $profile->save();
 
-        ProfileUser::create(['user_id' => $user->id, 'profile_id' => $profile->id]);
+            ProfileUser::create(['user_id' => $user->id, 'profile_id' => $profile->id]);
 
-        return redirect('agency/owners/create');
+            return redirect()->back();
+        }
+
     }
 
     /**
@@ -87,7 +92,8 @@ class AgencyOwnerController extends Controller
      */
     public function show($id)
     {
-        //
+        $users = User::all();
+        return view('agency.owner.index', compact('users'));
     }
 
     /**
@@ -112,6 +118,12 @@ class AgencyOwnerController extends Controller
     public function update(Request $request, $id)
     {
 
+        if($file=$request->file('avatar')){
+            $name=time().$file->getClientOriginalName();
+            $file->move('images',$name);
+
+        }
+
         Profile::findOrFail($id)->update([
             'first_name' => $request->firstname,
             'last_name' => $request->lastname,
@@ -119,13 +131,11 @@ class AgencyOwnerController extends Controller
             'profession' => $request->profession,
             'phone' => $request->phone,
             'address' => $request->address,
-            'avatar' => $request->avatar,
+            'avatar' => $name,
             'status' => $request->status
         ]);
 
-        return redirect('agency/owners/create');
-
-
+        return redirect()->back();
     }
 
     /**
