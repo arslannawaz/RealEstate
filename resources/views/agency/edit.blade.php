@@ -40,10 +40,10 @@
         {!! Form::text('phone',$agency->phone,['class'=>'form-control']) !!}
     </div>
 
-    <div class="form-group">
+    {{--<div class="form-group">
         {!! Form::label('email','Email') !!}
         {!! Form::text('email',$agency->email,['class'=>'form-control']) !!}
-    </div>
+    </div>--}}
 
     <div class="form-group">
         {!! Form::submit('Update',['class'=>'btn btn-success']) !!}

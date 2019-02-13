@@ -1,6 +1,17 @@
 @extends('layouts.app')
 
+    <style>
+        .image{
+            background-size: cover;
+            background-image: url("https://images.unsplash.com/photo-1486607303850-bc051a4ffad4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=753&q=80");
+        }
+
+    </style>
+
+
 @section('content')
+    <div class="container-fluid image">
+        <br><br>
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
@@ -70,4 +81,6 @@
         </div>
     </div>
 </div>
+        <br><br><br><br><br><br><br><br><br><br><br><br><br>
+    </div>
 @endsection

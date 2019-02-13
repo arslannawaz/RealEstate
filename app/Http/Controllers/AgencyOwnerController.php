@@ -164,6 +164,8 @@ class AgencyOwnerController extends Controller
         $pu_id = $user->id;
         ProfileUser::findOrFail($pu_id)->delete();
 
+        RoleUser::where('user_id',$id)->delete();
+
         User::findOrFail($id)->delete();
 
         /*$user->profile_user()->profile()->delete();

@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 
     <meta charset="utf-8">
@@ -8,8 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-
-    <title>Admin</title>
+    <title>Owner</title>
 
     <!-- Bootstrap Core CSS -->
 
@@ -19,7 +17,22 @@
 
     <link href="{{asset('css/all.css')}}" rel="stylesheet">
 
-    @yield('styles');
+
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+        }
+
+        li a{
+            color: silver;
+        }
+
+        .bg-image{
+            background-size: cover;
+            background-image: url("https://images.unsplash.com/photo-1511184150666-9bb7d41a88f4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80");
+        }
+    </style>
 
     {{--<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
@@ -32,7 +45,7 @@
 <div id="wrapper">
 
     <!-- Navigation -->
-    <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+    <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0;background-color: #1b4b72">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                 <span class="sr-only">Toggle navigation</span>
@@ -40,7 +53,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="/">Home</a>
+            <a class="navbar-brand" href="/"></a>
         </div>
         <!-- /.navbar-header -->
 
@@ -56,11 +69,14 @@
                     {{ Auth::user()->email }}
                 </a>
                 <ul class="dropdown-menu dropdown-user">
-                    <li><a href="{{route('owner.owner.index')}}"><i class="fa fa-user fa-fw"></i> User Profile</a>
+                    <li><a class="dropdown-item" href="{{route('owner.owner.index')}}"><i class="fa fa-user fa-fw"></i> User Profile</a>
                     </li>
-                    <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
+                    <li><a class="dropdown-item" href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
                     </li>
+
+
                     <li class="divider"></li>
+
                     <li>
                         {{--<a href="{{ route('logout') }}"><i class="fa fa-sign-out fa-fw"></i> Logout</a>--}}
 
@@ -113,7 +129,7 @@
 
 
 
-        <div class="navbar-default sidebar" role="navigation">
+        <div class="navbar-default sidebar" role="navigation" style="background-color: #1b4b72">
             <div class="sidebar-nav navbar-collapse">
                 <ul class="nav" id="side-menu">
                     <li class="sidebar-search">
@@ -343,13 +359,14 @@
 
 
 <!-- Page Content -->
-<div id="page-wrapper">
+<div id="page-wrapper" class="bg-image">
     <div class="container-fluid">
         <div class="row">
             <div class="col-lg-12">
                 <h1 class="page-header"></h1>
 
                 @yield('content')
+                <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
             </div>
             <!-- /.col-lg-12 -->
         </div>

@@ -18,6 +18,7 @@
         </thead>
         <tbody>
         <tr>
+
             <td>{{$user->id}}</td>
             <td>{{$user->profile_user->profile->first_name}}</td>
             <td>{{$user->profile_user->profile->last_name}}</td>

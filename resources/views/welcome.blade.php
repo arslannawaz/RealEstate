@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel</title>
+        <title>Real Estate</title>
 
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
@@ -19,16 +19,18 @@
         <!-- Styles -->
         <style>
             html, body {
-                background-color: #fff;
-                color: #636b6f;
+                background-color: black;
+                color: white;
                 font-family: 'Nunito', sans-serif;
                 font-weight: 200;
-                height: 100vh;
+                /*height: 100vh;*/
                 margin: 0;
             }
 
             .full-height {
+/*
                 height: 100vh;
+*/
             }
 
             .flex-center {
@@ -37,9 +39,9 @@
                 justify-content: center;
             }
 
-            .position-ref {
+           /* .position-ref {
                 position: relative;
-            }
+            }*/
 
             .top-right {
                 position: absolute;
@@ -47,16 +49,16 @@
                 top: 18px;
             }
 
-            .content {
+            /*.content {
                 text-align: center;
-            }
+            }*/
 
-            .title {
+            /*.title {
                 font-size: 84px;
-            }
+            }*/
 
             .links > a {
-                color: #636b6f;
+                color: white;
                 padding: 0 25px;
                 font-size: 13px;
                 font-weight: 600;
@@ -65,9 +67,9 @@
                 text-transform: uppercase;
             }
 
-            .m-b-md {
+            /*.m-b-md {
                 margin-bottom: 30px;
-            }
+            }*/
         </style>
     </head>
     <body>
@@ -86,7 +88,7 @@
                 </div>
             @endif
 
-            <div class="content">
+            {{--<div class="content">
                 <div class="title m-b-md">
                     Laravel
                 </div>
@@ -99,10 +101,14 @@
                     <a href="https://forge.laravel.com">Forge</a>
                     <a href="https://github.com/laravel/laravel">GitHub</a>
                 </div>
-            </div>
+            </div>--}}
         </div>
 
-        {{--<div id="demo" class="carousel slide" data-ride="carousel">
+        <div>
+            <h1 style="padding-left: 25px" class="font-weight-bold" >Real Estate</h1>
+        </div>
+
+        <div id="demo" class="carousel slide" data-ride="carousel">
 
             <!-- Indicators -->
             <ul class="carousel-indicators">
@@ -114,14 +120,18 @@
             <!-- The slideshow -->
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img src="https://images.unsplash.com/photo-1535637603896-07c179d71103?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=ab712946ddf3abfdf615bb1757205935&auto=format&fit=crop&w=752&q=80" alt="Los Angeles" style="width: 100%">
+                    <img src="https://images.unsplash.com/photo-1505873242700-f289a29e1e0f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1510&q=80" alt="Chicago" style="width: 100%">
                 </div>
+
                 <div class="carousel-item">
-                    <img src="https://beuhairsalon.com/wp-content/uploads/2017/09/beuhair-interior-3-min-cropped.jpg" alt="Chicago" style="width: 100%">
+                    <img src="https://images.unsplash.com/photo-1506290690282-661fbd742be8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80" alt="Chicago" style="width: 100%">
                 </div>
+
                 <div class="carousel-item">
-                    <img src="https://indiahip.in/wp-content/uploads/2018/07/Hair-Salon.jpg" alt="New York" style="width: 100%">
+                    <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80" alt="New York" style="width: 100%">
                 </div>
+
+
             </div>
 
             <!-- Left and right controls -->
@@ -131,7 +141,7 @@
             <a class="carousel-control-next" href="#demo" data-slide="next">
                 <span class="carousel-control-next-icon"></span>
             </a>
-        </div>--}}
+        </div>
 
     </body>
 </html>
