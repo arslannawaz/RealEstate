@@ -122,18 +122,27 @@ class AgencyOwnerController extends Controller
             $name=time().$file->getClientOriginalName();
             $file->move('images',$name);
 
+            Profile::findOrFail($id)->update([
+                'first_name' => $request->firstname,
+                'last_name' => $request->lastname,
+                'gender' => $request->gender,
+                'profession' => $request->profession,
+                'phone' => $request->phone,
+                'address' => $request->address,
+                'avatar' => $name,
+                'status' => $request->status
+            ]);
         }
-
-        Profile::findOrFail($id)->update([
-            'first_name' => $request->firstname,
-            'last_name' => $request->lastname,
-            'gender' => $request->gender,
-            'profession' => $request->profession,
-            'phone' => $request->phone,
-            'address' => $request->address,
-            'avatar' => $name,
-            'status' => $request->status
-        ]);
+        else
+            Profile::findOrFail($id)->update([
+                'first_name' => $request->firstname,
+                'last_name' => $request->lastname,
+                'gender' => $request->gender,
+                'profession' => $request->profession,
+                'phone' => $request->phone,
+                'address' => $request->address,
+                'status' => $request->status
+                ]);
 
         return redirect()->back();
     }
@@ -159,7 +168,7 @@ class AgencyOwnerController extends Controller
 
         /*$user->profile_user()->profile()->delete();
         $user->delete();*/
-        return redirect('agency/owners/create');
+        return redirect()->back();
 
     }
 

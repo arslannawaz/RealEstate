@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\User;
+use App\Properties;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -26,7 +27,8 @@ class HomeController extends Controller
     public function index()
     {
         if(Auth::user()->role_user->role->name== "Agency"){
-            return view('agency.index');
+            $properties=Properties::all();
+            return view('agency.index',compact('properties'));
         }
         else if(Auth::user()->role_user->role->name== "Owner"){
             return redirect('owner');

@@ -57,7 +57,7 @@
     </div>
 
     <div class="form-group">
-        {!! Form::submit('Update Property',['class'=>'btn btn-primary col-md-6']) !!}
+        {!! Form::submit('Update Property',['class'=>'btn btn-primary col-md-12']) !!}
     </div>
 
     {!! Form::close() !!}
@@ -71,11 +71,11 @@
 
     {!! Form::close() !!}--}}
 
-    <form action="{{ url('agency/property', $property->id) }}" method="post" class="delete" onsubmit="return confirm('Do you really want to delete?')">
+    {{--<form action="{{ url('agency/property', $property->id) }}" method="post" class="delete" onsubmit="return confirm('Do you really want to delete?')">
         @csrf
         <input type="hidden" name="_method" value="DELETE">
         <input class="btn btn-danger col-md-6" type="submit" name="submit" value="Delete Property">
-    </form>
+    </form>--}}
 
     @include('layouts.error')
 

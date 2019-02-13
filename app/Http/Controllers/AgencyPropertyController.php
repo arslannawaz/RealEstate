@@ -149,7 +149,7 @@ class AgencyPropertyController extends Controller
 
         ProfileProperty::where('properties_id',$id)->delete();
 
-        return redirect('agency/property/create');
+        return redirect()->back();
 
 
     }

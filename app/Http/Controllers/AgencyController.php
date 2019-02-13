@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Agencies;
 use App\AgencyUser;
 use App\Http\Middleware\Agency;
+use App\Properties;
 use Illuminate\Http\Request;
 use App\User;
 use Illuminate\Support\Facades\Auth;
@@ -19,7 +20,8 @@ class AgencyController extends Controller
      */
     public function index()
     {
-        return view('agency.index');
+        $properties=Properties::all();
+        return view('agency.index',compact('properties'));
     }
 
     /**
