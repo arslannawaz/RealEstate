@@ -2,11 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Profile;
 use App\ProfileProperty;
 use App\Properties;
 use App\PropertyPictures;
 use App\PropertyTypes;
+use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class AgencyPropertyController extends Controller
 {
@@ -27,8 +30,9 @@ class AgencyPropertyController extends Controller
      */
     public function create()
     {
+        $users=User::all();
         $properties=Properties::all();
-        return view('agency.property.index',compact('properties'));
+        return view('agency.property.index',compact('properties','users'));
 
     }
 

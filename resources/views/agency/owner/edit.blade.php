@@ -1,7 +1,10 @@
-@extends('agency.only-agency')
+@extends('agency.dashboard')
+
+@section('content-head')
+    <h1>Edit Owner</h1>
+    @stop
 
 @section('content')
-    <h1>Edit Owner</h1>
 
     <div class="col-md-4">
         <img width="250" src="{{URL::to('/images/',$user->profile_user->profile->avatar)}}">
@@ -43,17 +46,12 @@
     </div>
 
     <div class="form-group">
-        {!! Form::label('status','Status') !!}
-        {!! Form::text('status',$user->profile_user->profile->status,['class'=>'form-control']) !!}
-    </div>
-
-    <div class="form-group">
         {!! Form::label('avatar','avatar') !!}
         {!! Form::file('avatar',null,['class'=>'form-control']) !!}
     </div>
 
     <div class="form-group">
-        {!! Form::submit('Update Owner',['class'=>'btn btn-primary col-md-12']) !!}
+        {!! Form::submit('Update Owner',['class'=>'btn btn-success col-md-12']) !!}
     </div>
 
     {!! Form::close() !!}

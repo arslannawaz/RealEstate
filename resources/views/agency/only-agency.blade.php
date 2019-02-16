@@ -149,7 +149,7 @@
                             </li>
 
                             <li>
-                                <a href="{{--{{route('admin.posts.create')}}--}}">Create Post</a>
+                                <a href="{{route('agency.agency.show',Auth::user()->id)}}">Dashboard</a>
                             </li>
 
                             <li>

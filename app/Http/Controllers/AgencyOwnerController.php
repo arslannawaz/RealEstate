@@ -19,6 +19,7 @@ class AgencyOwnerController extends Controller
      */
     public function index()
     {
+
     }
 
     /**
@@ -43,15 +44,12 @@ class AgencyOwnerController extends Controller
         $this->validate($request, [
             'email' => 'required',
             'password' => 'required',
-            'online' => 'required',
             'firstname' => 'required',
             'lastname' => 'required',
             'gender' => 'required',
-            'profession' => 'required',
             'phone' => 'required',
             'address' => 'required',
-            'avatar' => 'required',
-            'status' => 'required',
+
         ]);
 
         if($file=$request->file('avatar')){
@@ -68,11 +66,11 @@ class AgencyOwnerController extends Controller
             $profile->first_name = $input['firstname'];
             $profile->last_name = $input['lastname'];
             $profile->gender = $input['gender'];
-            $profile->profession = $input['profession'];
+            $profile->profession = 'Owner';
             $profile->address = $input['address'];
             $profile->phone = $input['phone'];
             $profile->avatar = $name;
-            $profile->status = $input['status'];
+            $profile->status = Auth::user()->id;
             $profile->email = $input['email'];
 
             $profile->save();
@@ -130,7 +128,6 @@ class AgencyOwnerController extends Controller
                 'phone' => $request->phone,
                 'address' => $request->address,
                 'avatar' => $name,
-                'status' => $request->status
             ]);
         }
         else
@@ -141,7 +138,6 @@ class AgencyOwnerController extends Controller
                 'profession' => $request->profession,
                 'phone' => $request->phone,
                 'address' => $request->address,
-                'status' => $request->status
                 ]);
 
         return redirect()->back();

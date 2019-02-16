@@ -1,4 +1,4 @@
-@extends('agency.only-agency')
+@extends('agency.dashboard')
 
 @section('content')
 

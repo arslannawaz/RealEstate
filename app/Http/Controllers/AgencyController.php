@@ -20,8 +20,8 @@ class AgencyController extends Controller
      */
     public function index()
     {
-        $properties=Properties::all();
-        return view('agency.index',compact('properties'));
+        $user=User::all();
+        return view('agency.dashboard',compact('user'));
     }
 
     /**
@@ -69,7 +69,7 @@ class AgencyController extends Controller
      */
     public function show($id)
     {
-        //
+
     }
 
     /**
@@ -80,8 +80,12 @@ class AgencyController extends Controller
      */
     public function edit($id)
     {
-        $agency=Auth::user()->agency_user->agencies;
-        return view('agency.edit' ,compact('agency'));
+        if(Auth::user()->agency_user) {
+            $agency = Auth::user()->agency_user->agencies;
+            return view('agency.edit', compact('agency'));
+        }
+        $user=Auth::user();
+        return view('agency.create',compact('user'));
     }
 
     /**

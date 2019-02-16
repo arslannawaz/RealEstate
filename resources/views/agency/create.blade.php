@@ -1,4 +1,4 @@
-@extends('agency.only-agency')
+@extends('agency.dashboard')
 
 @section('content')
     @if($user->agency_user)
@@ -45,7 +45,7 @@
     </div>
 
     <div class="form-group">
-        {!! Form::submit('Submit',['class'=>'btn btn-primary']) !!}
+        {!! Form::submit('Add Info',['class'=>'btn btn-success']) !!}
     </div>
 
     {!! Form::close() !!}

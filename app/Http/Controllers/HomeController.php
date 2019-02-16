@@ -27,8 +27,7 @@ class HomeController extends Controller
     public function index()
     {
         if(Auth::user()->role_user->role->name== "Agency"){
-            $properties=Properties::all();
-            return view('agency.index',compact('properties'));
+            return view('agency.dashboard');
         }
         else if(Auth::user()->role_user->role->name== "Owner"){
             return redirect('owner');
