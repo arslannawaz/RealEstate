@@ -61,7 +61,6 @@ class AgencyOwnerController extends Controller
             $user = User::create($input);
             RoleUser::create(['user_id' => $user->id, 'role_id' => '2']);
 
-
             $profile = new Profile();
             $profile->first_name = $input['firstname'];
             $profile->last_name = $input['lastname'];
@@ -77,7 +76,34 @@ class AgencyOwnerController extends Controller
 
             ProfileUser::create(['user_id' => $user->id, 'profile_id' => $profile->id]);
 
-            return redirect()->back();
+            return $this->show(Auth::user()->id);
+
+        }
+        else{
+
+            $input = $request->all();
+            $input['password'] = bcrypt($request->password);
+            $user = User::create($input);
+            RoleUser::create(['user_id' => $user->id, 'role_id' => '2']);
+
+            $profile = new Profile();
+            $profile->first_name = $input['firstname'];
+            $profile->last_name = $input['lastname'];
+            $profile->gender = $input['gender'];
+            $profile->profession = 'Owner';
+            $profile->address = $input['address'];
+            $profile->phone = $input['phone'];
+            $profile->avatar = 'img_avatar.png';
+            $profile->status = Auth::user()->id;
+            $profile->email = $input['email'];
+
+            $profile->save();
+
+            ProfileUser::create(['user_id' => $user->id, 'profile_id' => $profile->id]);
+
+            return $this->show(Auth::user()->id);
+
+
         }
 
     }
@@ -140,7 +166,7 @@ class AgencyOwnerController extends Controller
                 'address' => $request->address,
                 ]);
 
-        return redirect()->back();
+        return $this->show(Auth::user()->id);
     }
 
     /**

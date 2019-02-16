@@ -76,44 +76,38 @@
         <div class="x_panel">
             <div class="x_title">
                 <h2>Owner Info</h2>
-                <ul class="nav navbar-right panel_toolbox">
-                    <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
-                    </li>
-
-                    <li><a class="close-link"><i class="fa fa-close"></i></a>
-                    </li>
-                </ul>
                 <div class="clearfix"></div>
             </div>
             <div class="x_content">
 
                 {!! Form::open(['action' => 'AgencyOwnerController@store','method'=>'POST','files'=>true,'class'=>'form-horizontal form-label-left']) !!}
+                @csrf
 
                     <div class="item form-group">
                         {!! Form::label('firstname','First Name',['class'=>'control-label col-md-3 col-sm-3 col-xs-12']) !!}
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                            {!! Form::text('firstname',null,['class'=>'form-control col-md-7 col-xs-12']) !!}
+                            {!! Form::text('firstname',null,['class'=>'form-control col-md-7 col-xs-12','required']) !!}
                         </div>
                     </div>
 
                 <div class="item form-group">
                     {!! Form::label('lastname','Last Name',['class'=>'control-label col-md-3 col-sm-3 col-xs-12']) !!}
                     <div class="col-md-6 col-sm-6 col-xs-12">
-                        {!! Form::text('lastname',null,['class'=>'form-control col-md-7 col-xs-12']) !!}
+                        {!! Form::text('lastname',null,['class'=>'form-control col-md-7 col-xs-12','required']) !!}
                     </div>
                 </div>
 
                 <div class="item form-group">
                     {!! Form::label('email','Email',['class'=>'control-label col-md-3 col-sm-3 col-xs-12']) !!}
                     <div class="col-md-6 col-sm-6 col-xs-12">
-                        {!! Form::text('email',null,['class'=>'form-control col-md-7 col-xs-12']) !!}
+                        {!! Form::text('email',null,['class'=>'form-control col-md-7 col-xs-12','required']) !!}
                     </div>
                 </div>
 
                 <div class="item form-group">
                     {!! Form::label('password','Password',['class'=>'control-label col-md-3 col-sm-3 col-xs-12']) !!}
                     <div class="col-md-6 col-sm-6 col-xs-12">
-                        {!! Form::password('password',['class'=>'form-control col-md-7 col-xs-12']) !!}
+                        {!! Form::password('password',['class'=>'form-control col-md-7 col-xs-12','required']) !!}
                     </div>
                 </div>
 
@@ -127,14 +121,14 @@
                 <div class="item form-group">
                     {!! Form::label('phone','Phone',['class'=>'control-label col-md-3 col-sm-3 col-xs-12']) !!}
                     <div class="col-md-6 col-sm-6 col-xs-12">
-                        {!! Form::text('phone',null,['class'=>'form-control col-md-7 col-xs-12']) !!}
+                        {!! Form::text('phone',null,['class'=>'form-control col-md-7 col-xs-12','required']) !!}
                     </div>
                 </div>
 
                 <div class="item form-group">
                     {!! Form::label('address','Address',['class'=>'control-label col-md-3 col-sm-3 col-xs-12']) !!}
                     <div class="col-md-6 col-sm-6 col-xs-12">
-                        {!! Form::text('address',null,['class'=>'form-control col-md-7 col-xs-12']) !!}
+                        {!! Form::text('address',null,['class'=>'form-control col-md-7 col-xs-12','required']) !!}
                     </div>
                 </div>
 

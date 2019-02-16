@@ -30,9 +30,23 @@ class AgencyPropertyController extends Controller
      */
     public function create()
     {
-        $users=User::all();
-        $properties=Properties::all();
-        return view('agency.property.index',compact('properties','users'));
+        $profiles=Profile::all();
+        foreach ($profiles as $profile) {
+            if ($profile->status == Auth::user()->id) {
+                $pro_propertyy = $profile->profile_properties;
+            }
+            return view('agency.property.index', compact('pro_propertyy'));
+        }
+
+        /*$profiles=Profile::all();
+        foreach ($profiles as $profile)
+            if($profile->status==Auth::user()->id){
+                $pro_propertyy= $profile->profile_properties;
+                foreach ($pro_propertyy as $pro_property){
+                     echo $pro_property->properties;
+                }*/
+/*              return view('agency.property.index',compact('pro'));*/
+
 
     }
 

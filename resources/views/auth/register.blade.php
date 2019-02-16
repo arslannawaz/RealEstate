@@ -1,12 +1,13 @@
 @extends('layouts.app')
 
-<style>
-    .image{
-        background-size: cover;
-        background-image: url("https://images.unsplash.com/photo-1486607303850-bc051a4ffad4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=753&q=80");
-    }
+{!! Html::style('../theme/vendors/bootstrap/dist/css/bootstrap.max.css') !!}
+{!! Html::style('../theme/vendors/nprogress/nprogress.css') !!}
+{!! Html::style('../theme/vendors/font-awesome/css/font-awesome.min.css') !!}
+{!! Html::style('../theme/build/css/custom.min.css') !!}
+{!! Html::style('../theme/vendors/animate.css/animate.min.css') !!}
+<script src="{{asset('css/app.css')}}"></script>
 
-</style>
+
 
 @section('content')
     <div class="container-fluid image">
@@ -21,7 +22,7 @@
                     <form method="POST" action="{{ route('register') }}">
                         @csrf
 
-                       {{-- <div class="form-group row">
+                        {{--<div class="form-group row">
                             <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Name') }}</label>
 
                             <div class="col-md-6">
@@ -87,4 +88,5 @@
         <br><br><br><br><br><br><br><br><br><br><br><br><br>
 
     </div>
+
 @endsection

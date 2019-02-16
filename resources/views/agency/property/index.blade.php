@@ -26,40 +26,34 @@
             <div class="x_panel">
                 <div class="x_title">
                     <h2>Properties Gallery</h2>
-                    <ul class="nav navbar-right panel_toolbox">
-                        <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
-                        </li>
-                        <li><a class="close-link"><i class="fa fa-close"></i></a>
-                        </li>
-                    </ul>
+
                     <div class="clearfix"></div>
                 </div>
                 <div class="x_content">
 
                     <div class="row">
 
-                        @foreach($properties as $property)
+                        @foreach($pro_propertyy as $pro_property)
 
                             <div class="col-md-55">
                             <div class="thumbnail">
                                 <div class="image view view-first">
-                                    <a href="{{route('agency.property.show',$property->id)}}"><img width="200" height="150" src="{{URL::to('/images/',$property->property_pictures->src)}}"></a>
+                                    <img width="200" height="150" src="{{URL::to('/images/',$pro_property->properties->property_pictures->src)}}">
                                     <div class="mask">
                                         <p>Action</p>
                                         <div class="tools tools-bottom">
-                                            <a href="{{route('agency.property.show',$property->id)}}"><i class="fa fa-link"></i></a>
+                                            <a href="{{route('agency.property.show',$pro_property->properties->id)}}"><i class="fa fa-link"></i></a>
                                             <a href="#"><i class="fa fa-pencil"></i></a>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="caption">
-                                    <p>{{$property->description}}</p>
+                                    <p>{{$pro_property->properties->description}}</p>
                                 </div>
                             </div>
                         </div>
 
                                 @endforeach
-
 
                     </div>
                 </div>
