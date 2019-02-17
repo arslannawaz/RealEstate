@@ -57,11 +57,11 @@
                     <table class="table table-striped jambo_table bulk_action">
                         <thead>
                         <tr class="headings">
-                            <th class="column-title">ID</th>
                             <th class="column-title">Picture</th>
                             <th class="column-title">First Name</th>
                             <th class="column-title">Last Name</th>
                             <th class="column-title">Email</th>
+                            <th class="column-title">View</th>
                             <th colspan="2" class="column-title no-link last"><span class="nobr">Action</span>
                             </th>
                             <th class="bulk-actions" colspan="7">
@@ -74,11 +74,11 @@
                         @foreach($users as $user)
                             @if($user->role_user->role->name=='Owner' && $user->profile_user->profile->status==\Illuminate\Support\Facades\Auth::user()->id )
                         <tr class="even pointer">
-                            <td class=" ">{{$user->id}}</td>
-                            <td class=" "><img width="60" src="{{URL::to('/images/',$user->profile_user->profile->avatar)}}"></td>
+                            <td class=" "><img width="50" src="{{URL::to('/images/',$user->profile_user->profile->avatar)}}"></td>
                             <td class=" ">{{$user->profile_user->profile->first_name}}</td>
                             <td class=" ">{{$user->profile_user->profile->last_name}}</td>
                             <td class=" ">{{$user->email}}</td>
+                            <td class=" last"><a href="{{route('agency.info.show',$user->profile_user->profile->id)}}"><button class="btn btn-success">View Info</button></a></td>
                             <td class=" last"><a href="{{route('agency.owners.edit',$user->id)}}"><button class="btn btn-success">Edit</button></a></td>
 
                             <td>

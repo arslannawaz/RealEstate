@@ -19,21 +19,22 @@
         </div>
     @endforeach--}}
 
-
-
     <div class="row">
         <div class="col-md-12">
             <div class="x_panel">
                 <div class="x_title">
                     <h2>Properties Gallery</h2>
 
+                    <ul class="nav navbar-right panel_toolbox">
+                        <a href="{{url('pro/create',$profiles->id)}}"><button class="btn btn-success">Create Property</button></a>
+                    </ul>
                     <div class="clearfix"></div>
                 </div>
                 <div class="x_content">
 
                     <div class="row">
 
-                        @foreach($pro_propertyy as $pro_property)
+                        @foreach($profile_propertyy as $pro_property)
 
                             <div class="col-md-55">
                             <div class="thumbnail">
@@ -42,14 +43,16 @@
                                     <div class="mask">
                                         <p>Action</p>
                                         <div class="tools tools-bottom">
-                                            <a href="{{route('agency.property.show',$pro_property->properties->id)}}"><i class="fa fa-link"></i></a>
-                                            <a href="#"><i class="fa fa-pencil"></i></a>
+                                            <a href="{{route('agency.property.edit',$pro_property->properties->id)}}"><i class="fa fa-link"></i></a>
+                                            <a href="{{route('agency.property.edit',$pro_property->properties->id)}}"><i class="fa fa-pencil"></i></a>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="caption">
                                     <p>{{$pro_property->properties->description}}</p>
                                 </div>
+
+
                             </div>
                         </div>
 
@@ -61,5 +64,5 @@
         </div>
     </div>
 
-
     @stop
+

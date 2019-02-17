@@ -18,6 +18,11 @@
 {!! Html::style('../theme/vendors/jqvmap/dist/jqvmap.min.css') !!}
 {!! Html::style('../theme/vendors/bootstrap-daterangepicker/daterangepicker.css') !!}
 {!! Html::style('../theme/build/css/custom.min.css') !!}
+
+    {!! Html::style('../theme/vendors/bootstrap-progressbar/css/bootstrap-progressbar-3.3.4.min.css') !!}
+{!! Html::style('../theme/vendors/pnotify/dist/pnotify.css') !!}
+{!! Html::style('../theme/vendors/pnotify/dist/pnotify.buttons.css') !!}
+{!! Html::style('../theme/vendors/pnotify/dist/pnotify.nonblock.css') !!}
     <script src="{{asset('css/app.css')}}"></script>
 
 
@@ -234,7 +239,7 @@
                                 @yield('content-head')
                             </div>
                             <div class="col-md-6">
-                                <div id="reportrange" class="pull-right" style="background: #fff; cursor: pointer; padding: 5px 10px; border: 1px solid #ccc">
+                               {{-- <div id="reportrange" class="pull-right" style="background: #fff; cursor: pointer; padding: 5px 10px; border: 1px solid #ccc">
                                     <i class="glyphicon glyphicon-calendar fa fa-calendar"></i>
                                     <span>
 
@@ -243,7 +248,7 @@
                                         {{\Carbon\Carbon::now()->toDateString()}}
 
                                     </span> <b class="caret"></b>
-                                </div>
+                                </div>--}}
                             </div>
                         </div>
 
@@ -298,7 +303,12 @@
 {!!Html::script('../theme/vendors/jmoment/min/moment.min.js')!!}
 {!!Html::script('../theme/vendors/bootstrap-daterangepicker/daterangepicker.js')!!}
 {!!Html::script('../theme/build/js/custom.min.js')!!}
-<script src="{{asset('js/app.js')}}"></script>
+
+    {!!Html::script('../theme/vendors/pnotify/dist/pnotify.js')!!}
+    {!!Html::script('../theme/vendors/pnotify/dist/pnotify.buttons.js')!!}
+    {!!Html::script('../theme/vendors/pnotify/dist/pnotify.nonblock.js')!!}
+
+    <script src="{{asset('js/app.js')}}"></script>
 
 </body>
 </html>

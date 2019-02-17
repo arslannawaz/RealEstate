@@ -28,6 +28,11 @@ Route::group(['middleware'=>'agency'],function (){
 
     Route::resource('/agency/property','AgencyPropertyController',['as'=>'agency']);
 
+    Route::resource('/agency/owner/info','AgencyOwnerInfoController',['as'=>'agency']);
+
+    Route::get('pro/create/{id}','ProCreateController@createProperty');
+
+
 });
 
 Route::group(['middleware'=>'owner'],function (){

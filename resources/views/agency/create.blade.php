@@ -116,7 +116,7 @@
                     <div class="ln_solid"></div>
                     <div class="form-group">
                         <div class="col-md-6 col-md-offset-3">
-                            {!! Form::submit('Create Owner',['class'=>'btn btn-success']) !!}
+                            {!! Form::submit('Add Info',['class'=>'btn btn-success']) !!}
                         </div>
                     </div>
 

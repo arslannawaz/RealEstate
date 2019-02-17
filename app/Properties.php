@@ -18,4 +18,9 @@ class Properties extends Model
         return $this->hasOne('App\PropertyPictures');
     }
 
+    public function profile_property(){
+        return $this->hasOne('App\ProfileProperty');
+
+    }
+
 }

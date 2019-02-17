@@ -10,6 +10,7 @@ use App\PropertyTypes;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use function Psy\sh;
 
 class AgencyPropertyController extends Controller
 {
@@ -28,15 +29,16 @@ class AgencyPropertyController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
     public function create()
     {
-        $profiles=Profile::all();
+        /*$profiles=Profile::all();
         foreach ($profiles as $profile) {
             if ($profile->status == Auth::user()->id) {
                 $pro_propertyy = $profile->profile_properties;
             }
             return view('agency.property.index', compact('pro_propertyy'));
-        }
+        }*/
 
         /*$profiles=Profile::all();
         foreach ($profiles as $profile)
@@ -45,8 +47,7 @@ class AgencyPropertyController extends Controller
                 foreach ($pro_propertyy as $pro_property){
                      echo $pro_property->properties;
                 }*/
-/*              return view('agency.property.index',compact('pro'));*/
-
+/*              return view('agency.property.index',compact('pro'))*/
 
     }
 
@@ -58,7 +59,63 @@ class AgencyPropertyController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+        $this->validate($request, [
+            'name' => 'required',
+            'description' => 'required',
+            'location' => 'required',
+            'long' => 'required',
+            'latitude' => 'required',
+            'type' => 'required',
+            'status' => 'required',
+            'picname' => 'required',
+            'pdescription' => 'required',
+            'file' => 'required|image|mimes:jpeg,png,jpg,gif,svg',
+        ]);
+
+        $propertytype=PropertyTypes::create([
+            'name'=>$request->type,
+            'slug'=>'slug'
+        ]);
+
+        $pt=$propertytype->id;
+
+        // $user = User::findOrFail();
+        $property=Properties::create([
+            'name'=>$request->name,
+            'description'=>$request->description,
+            'location'=>$request->location,
+            'long'=>$request->long,
+            'latitude'=>$request->latitude,
+            'status'=>$request->status,
+            'property_types_id' => $pt
+        ]);
+
+        $p_id=$property->id;
+
+        if($file=$request->file('file')){
+            $name=time().$file->getClientOriginalName();
+            $file->move('images',$name);
+
+            $photo=PropertyPictures::create([
+                'src'=>$name,
+                'name'=>$request->picname,
+                'description'=>$request->pdescription,
+                'slug'=>'image',
+                'url'=>$name,
+                'active'=>'1',
+                'properties_id'=>$p_id
+            ]);
+        }
+
+        $profile_id=$request->pid;
+
+        ProfileProperty::create(['properties_id'=>$p_id,
+            'profile_id'=>$profile_id
+        ]);
+
+        return $this->show($profile_id);
+
     }
 
     /**
@@ -69,8 +126,11 @@ class AgencyPropertyController extends Controller
      */
     public function show($id)
     {
-        $property=Properties::findOrFail($id);
-        return view('agency.property.show',compact('property'));
+        /*$property=Properties::findOrFail($id);
+        return view('agency.property.show',compact('property'));*/
+        $profiles = Profile::findOrFail($id);
+        $profile_propertyy=$profiles->profile_properties;
+        return view('agency.property.index',compact('profile_propertyy','profiles'));
     }
 
     /**
@@ -108,42 +168,76 @@ class AgencyPropertyController extends Controller
             'type' => 'required',
             'status' => 'required',
             'picname' => 'required',
-            'pdescription' => 'required',
-            'file' => 'required',
-
-        ]);
-
-        $property=Properties::findOrFail($id);
-        $p_type = $property->property_types_id;
-
-        PropertyTypes::findOrFail($p_type)->update([
-            'name'=>$request->type,
-        ]);
-
-        Properties::findOrFail($id)->update([
-            'name'=>$request->name,
-            'description'=>$request->description,
-            'location'=>$request->location,
-            'long'=>$request->long,
-            'latitude'=>$request->latitude,
-            'status'=>$request->status,
+            'pdescription' => 'required'
         ]);
 
         if($file=$request->file('file')){
+
+            $this->validate($request, [
+                'file'=>'required|image|mimes:jpeg,png,jpg,gif,svg'
+            ]);
+
             $name=time().$file->getClientOriginalName();
             $file->move('images',$name);
 
+            $property=Properties::findOrFail($id);
+            $p_type = $property->property_types_id;
+
+            PropertyTypes::findOrFail($p_type)->update([
+                'name'=>$request->type,
+            ]);
+
+            Properties::findOrFail($id)->update([
+                'name'=>$request->name,
+                'description'=>$request->description,
+                'location'=>$request->location,
+                'long'=>$request->long,
+                'latitude'=>$request->latitude,
+                'status'=>$request->status,
+            ]);
+
+            $pic=$property->property_pictures->id;
+
+            PropertyPictures::findOrFail($pic)->update([
+                'src'=>$name,
+                'name'=>$request->picname,
+                'description'=>$request->pdescription,
+                'url'=>$name,
+            ]);
+
+            $pppid =$property->profile_property->profile_id;
+            return $this->show($pppid);
+
         }
-        $pic=$property->property_pictures->id;
+        else{
+            $property=Properties::findOrFail($id);
+            $p_type = $property->property_types_id;
 
-        PropertyPictures::findOrFail($pic)->update([
-            'src'=>$name,
-            'name'=>$request->picname,
-            'description'=>$request->pdescription,
-            'url'=>$name,
-        ]);
+            PropertyTypes::findOrFail($p_type)->update([
+                'name'=>$request->type,
+            ]);
 
-        return redirect('agency/property/create');
+            Properties::findOrFail($id)->update([
+                'name'=>$request->name,
+                'description'=>$request->description,
+                'location'=>$request->location,
+                'long'=>$request->long,
+                'latitude'=>$request->latitude,
+                'status'=>$request->status,
+            ]);
+
+            $pic=$property->property_pictures->id;
+
+            PropertyPictures::findOrFail($pic)->update([
+                'name'=>$request->picname,
+                'description'=>$request->pdescription,
+
+            ]);
+
+            $ppid =$property->profile_property->profile_id;
+            return $this->show($ppid);
+
+        }
 
     }
 
@@ -156,6 +250,9 @@ class AgencyPropertyController extends Controller
     public function destroy($id)
     {
         $property=Properties::findOrFail($id);
+
+        $ppid =$property->profile_property->profile_id;
+
         $p_type = $property->property_types_id;
         $pic=$property->property_pictures->id;
 
@@ -167,8 +264,7 @@ class AgencyPropertyController extends Controller
 
         ProfileProperty::where('properties_id',$id)->delete();
 
-        return redirect()->back();
-
+        return $this->show($ppid);
 
     }
 }
