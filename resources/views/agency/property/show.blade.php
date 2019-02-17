@@ -32,6 +32,37 @@
     <br><br>--}}
 
 
+        <div class="row">
+            <div class="col-md-12">
+                <div class="x_panel">
+                    <div class="x_content">
+
+                        <div class="col-md-8 col-lg-8 col-sm-7">
+                            <img width="100%" src="{{URL::to('/images/',$property->property_pictures->src)}}">
+
+                            <blockquote class="blockquote">
+                                <h2>{{$property->description}}</h2>
+
+                            </blockquote>
+                        </div>
+
+                        <div class="col-md-4 col-lg-4 col-sm-5">
+                            <h4>Name: {{$property->name}}</h4>
+                            <h4>Location: {{$property->location}}</h4>
+                            <h4>Longitude: {{$property->long}}</h4>
+                            <h4>Latitude: {{$property->latitude}}</h4>
+                            <h4>Status: {{$property->status}}</h4>
+                            <h4>Type: {{$property->property_types->name}}</h4>
+                        </div>
+
+                        <div class="clearfix"></div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
 
 
 

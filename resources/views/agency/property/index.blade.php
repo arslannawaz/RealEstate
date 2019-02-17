@@ -43,7 +43,7 @@
                                     <div class="mask">
                                         <p>Action</p>
                                         <div class="tools tools-bottom">
-                                            <a href="{{route('agency.property.edit',$pro_property->properties->id)}}"><i class="fa fa-link"></i></a>
+                                            <a href="{{url('pro/show',$pro_property->properties->id)}}"><i class="fa fa-link"></i></a>
                                             <a href="{{route('agency.property.edit',$pro_property->properties->id)}}"><i class="fa fa-pencil"></i></a>
                                         </div>
                                     </div>

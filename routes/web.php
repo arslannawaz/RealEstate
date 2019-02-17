@@ -32,6 +32,9 @@ Route::group(['middleware'=>'agency'],function (){
 
     Route::get('pro/create/{id}','ProCreateController@createProperty');
 
+    Route::get('pro/show/{id}','ProCreateController@showProperty');
+
+
 
 });
 
